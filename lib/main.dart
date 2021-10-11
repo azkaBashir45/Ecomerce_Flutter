@@ -6,6 +6,7 @@ import './src/screens/Dashboard.dart';
 import './src/screens/ProductPage.dart';
 import './src/screens/FilterPage.dart';
 import './src/screens/AddAddress.dart';
+import './src/screens/DeliveryDetil.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      // home: HomePage(pageTitle: 'Welcome'),
-      home: AddAddress(),
+      home: HomePage(pageTitle: 'Welcome'),
+      // home: DileveryDetail(),
       routes: <String, WidgetBuilder>{
         '/filter': (BuildContext context) => FilterPage(),
         '/signup': (BuildContext context) => SignUpPage(),

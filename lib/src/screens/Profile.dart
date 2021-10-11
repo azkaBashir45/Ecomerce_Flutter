@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fryo/src/screens/SignInPage.dart';
 import 'package:fryo/src/shared/colors.dart';
 import 'package:fryo/src/shared/styles.dart';
+
+import 'DeliveryDetil.dart';
 
 class Profile extends StatefulWidget {
   // const Profile({ Key? key }) : super(key: key);
@@ -45,7 +48,7 @@ class _ProfileState extends State<Profile> {
           Align(
             alignment: Alignment.topCenter,
             child: Container(
-              margin: EdgeInsets.only(top: 50),
+              margin: EdgeInsets.only(top: 25),
               color: bgColor,
               child: Column(
                 children: [
@@ -64,7 +67,7 @@ class _ProfileState extends State<Profile> {
                         fontFamily: 'Poppins'),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 20),
+                    margin: EdgeInsets.only(top: 10),
                     child: Divider(
                       thickness: 1.0,
                     ),
@@ -76,7 +79,7 @@ class _ProfileState extends State<Profile> {
           //setting
           Container(
             margin: EdgeInsets.only(
-              top: 290,
+              top: 240,
             ),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
@@ -88,13 +91,43 @@ class _ProfileState extends State<Profile> {
                   child: Card(
                     elevation: 0,
                     margin: EdgeInsets.only(top: 30),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => SignInPage()));
+                      },
+                      child: ListTile(
+                        title: Text(
+                          'My Account',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                        leading: Icon(
+                          Icons.account_box,
+                          color: fontColor,
+                        ),
+                        trailing: Icon(
+                          Icons.navigate_next,
+                          color: fontColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 0,
+                  // margin: EdgeInsets.only(top: 5),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DileveryDetail()));
+                    },
                     child: ListTile(
                       title: Text(
-                        'Setting',
+                        'Address',
                         style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                       leading: Icon(
-                        Icons.settings,
+                        Icons.location_on,
                         color: fontColor,
                       ),
                       trailing: Icon(
@@ -106,14 +139,14 @@ class _ProfileState extends State<Profile> {
                 ),
                 Card(
                   elevation: 0,
-                  // margin: EdgeInsets.only(top: 5),
+                  // margin: EdgeInsets.only(top: 30),
                   child: ListTile(
                     title: Text(
-                      'Order History',
+                      'Notification',
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                     leading: Icon(
-                      Icons.call_to_action,
+                      Icons.notification_add,
                       color: fontColor,
                     ),
                     trailing: Icon(
@@ -127,29 +160,29 @@ class _ProfileState extends State<Profile> {
                   // margin: EdgeInsets.only(top: 30),
                   child: ListTile(
                     title: Text(
-                      'Cards',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    leading: Icon(
-                      Icons.credit_card,
-                      color: fontColor,
-                    ),
-                    trailing: Icon(
-                      Icons.navigate_next,
-                      color: fontColor,
-                    ),
-                  ),
-                ),
-                Card(
-                  elevation: 0,
-                  // margin: EdgeInsets.only(top: 30),
-                  child: ListTile(
-                    title: Text(
-                      'Shopping Address',
+                      'Orders',
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                     leading: Icon(
                       Icons.location_city,
+                      color: fontColor,
+                    ),
+                    trailing: Icon(
+                      Icons.navigate_next,
+                      color: fontColor,
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 0,
+                  // margin: EdgeInsets.only(top: 30),
+                  child: ListTile(
+                    title: Text(
+                      'Share App',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    leading: Icon(
+                      Icons.share,
                       color: fontColor,
                     ),
                     trailing: Icon(

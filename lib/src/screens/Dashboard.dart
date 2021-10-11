@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fryo/src/screens/FilterPage.dart';
 import '../shared/styles.dart';
 import '../shared/colors.dart';
 import '../shared/fryo_icons.dart';
@@ -60,11 +61,15 @@ class _DashboardState extends State<Dashboard> {
             ),
             IconButton(
               padding: EdgeInsets.all(0),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => FilterPage()));
+              },
               iconSize: 21,
               // icon: Icon(Fryo.alarm),
               icon: Icon(
-                Icons.notification_important_outlined,
+                // Icons.notification_important_outlined,
+                Icons.sort,
                 color: fontColor,
               ),
             )
