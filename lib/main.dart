@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fryo/src/shared/searchUi.dart';
 import './src/screens/SignInPage.dart';
 import './src/screens/SignUpPage.dart';
 import './src/screens/HomePage.dart';
@@ -7,6 +8,7 @@ import './src/screens/ProductPage.dart';
 import './src/screens/FilterPage.dart';
 import './src/screens/AddAddress.dart';
 import './src/screens/DeliveryDetil.dart';
+import './src/shared/SearchUi.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: HomePage(pageTitle: 'Welcome'),
-      // home: DileveryDetail(),
+      // home: SearchUI(),
       routes: <String, WidgetBuilder>{
         '/filter': (BuildContext context) => FilterPage(),
         '/signup': (BuildContext context) => SignUpPage(),

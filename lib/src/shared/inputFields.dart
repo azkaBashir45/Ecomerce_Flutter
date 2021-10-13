@@ -23,11 +23,11 @@ Container fryoTextInput(String hintText,
           // focusedBorder: inputFieldFocusedBorderStyle,
           contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: underlineColor),
+            borderSide: BorderSide(color: whiteColor),
           ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: underlineColor,
+              color: whiteColor,
             ),
           ),
           // border: inputFieldDefaultBorderStyle
@@ -60,11 +60,11 @@ Container fryoEmailInput(String hintText,
             // focusedBorder: inputFieldFocusedBorderStyle,
             contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: primaryColor),
+              borderSide: BorderSide(color: whiteColor),
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.cyan,
+                color: whiteColor,
               ),
             ),
 
@@ -96,10 +96,10 @@ Container fryoPasswordInput(String hintText,
             hintText: hintText,
             hintStyle: inputFieldHintPaswordTextStyle,
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: primaryColor),
+              borderSide: BorderSide(color: whiteColor),
             ),
             focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: primaryColor),
+              borderSide: BorderSide(color: whiteColor),
             ),
 
             // focusedBorder: inputFieldFocusedBorderStyle,
