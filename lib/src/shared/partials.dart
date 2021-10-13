@@ -12,90 +12,96 @@ Widget foodItem(Product food,
     // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
     child: Container(
       margin: EdgeInsets.only(left: 13),
-      height: 400,
+      height: 350,
       width: 200,
       decoration: BoxDecoration(
-        color: white,
+        color: whiteColor,
         borderRadius: BorderRadius.circular(30),
       ),
 
       child: Column(
         children: [
           Card(
-              // shape: OutlineInputBorder(borderRadius: BorderRadius.circular(22)),
-              // color: Colors.red,
-              child: Stack(
-            children: [
-              // RaisedButton(
-              //   onPressed: onTapped,
-              //   color: white,
-              //   // elevation: (isProductPage) ? 0 : 12,
-              //   shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(5)),
-              // child: Hero(
-              //   transitionOnUserGestures: true,
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.only(left: 12, right: 10, top: 8),
-                // color: white,
-                child: Image.asset(
-                  food.image,
-                  width: 200,
-                  height: 150,
-                  fit: BoxFit.cover,
-                ),
-              ),
-
-              Container(
-                margin: EdgeInsets.only(left: 12, top: 175),
-                child: Flexible(
-                  child: Container(
-                    padding: new EdgeInsets.only(right: 13.0),
-                    child: Text(
-                      food.name,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: h5,
+            elevation: 3,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(22),
+                borderSide: BorderSide(color: whiteColor)),
+            color: whiteColor,
+            child: Padding(
+                padding: EdgeInsets.only(bottom: 22),
+                child: Stack(
+                  children: [
+                    // RaisedButton(
+                    //   onPressed: onTapped,
+                    //   color: white,
+                    //   // elevation: (isProductPage) ? 0 : 12,
+                    //   shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(5)),
+                    // child: Hero(
+                    //   transitionOnUserGestures: true,
+                    Container(
+                      margin: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(left: 12, right: 10, top: 8),
+                      // color: white,
+                      child: Image.asset(
+                        food.image,
+                        width: 200,
+                        height: 150,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 12, top: 205),
-                child: Text(
-                  food.price,
-                  style: h5,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 120, left: 120),
-                child: FlatButton(
-                  padding: EdgeInsets.all(20),
-                  shape: CircleBorder(),
-                  onPressed: onLike,
-                  child: Icon(
-                    (food.userLiked) ? Icons.favorite : Icons.favorite_border,
-                    color: (food.userLiked) ? primaryColor : darkText,
-                    size: 30,
-                  ),
-                ),
-              ),
-              (food.discount != null)
-                  ? Container(
-                      margin: EdgeInsets.only(left: 17, top: 10),
-                      padding: EdgeInsets.only(
-                          top: 5, left: 10, right: 10, bottom: 5),
-                      decoration: BoxDecoration(
-                          color: Colors.grey[600],
-                          borderRadius: BorderRadius.circular(50)),
-                      child: Text('-' + food.discount.toString() + '%',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700)),
-                    )
-                  : SizedBox(width: 0)
-            ],
-          )),
+
+                    Container(
+                      margin: EdgeInsets.only(left: 12, top: 175),
+                      child: Flexible(
+                        child: Container(
+                          padding: new EdgeInsets.only(right: 13.0),
+                          child: Text(
+                            food.name,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                            style: h5,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 12, top: 205),
+                      child: Text(food.price, style: priceText),
+                    ),
+
+                    Container(
+                      margin: EdgeInsets.only(top: 120, left: 120),
+                      child: FlatButton(
+                        padding: EdgeInsets.all(20),
+                        shape: CircleBorder(),
+                        onPressed: onLike,
+                        child: Icon(
+                          (food.userLiked)
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          color: (food.userLiked) ? primaryColor : darkText,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                    (food.discount != null)
+                        ? Container(
+                            margin: EdgeInsets.only(left: 17, top: 10),
+                            padding: EdgeInsets.only(
+                                top: 5, left: 10, right: 10, bottom: 5),
+                            decoration: BoxDecoration(
+                                color: Colors.grey[600],
+                                borderRadius: BorderRadius.circular(50)),
+                            child: Text('-' + food.discount.toString() + '%',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700)),
+                          )
+                        : SizedBox(width: 0)
+                  ],
+                )),
+          ),
         ],
       ),
 

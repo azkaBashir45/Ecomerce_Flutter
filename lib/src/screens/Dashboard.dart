@@ -49,30 +49,30 @@ class _DashboardState extends State<Dashboard> {
           title:
               Text('Pasha', style: logoWhiteStyle, textAlign: TextAlign.center),
           actions: <Widget>[
-            IconButton(
-              padding: EdgeInsets.all(0),
-              onPressed: () {},
-              iconSize: 21,
-              // icon: Icon(Fryo.magnifier),
-              icon: Icon(
-                Icons.search,
-                color: fontColor,
-              ),
-            ),
-            IconButton(
-              padding: EdgeInsets.all(0),
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => FilterPage()));
-              },
-              iconSize: 21,
-              // icon: Icon(Fryo.alarm),
-              icon: Icon(
-                // Icons.notification_important_outlined,
-                Icons.sort,
-                color: fontColor,
-              ),
-            )
+            // IconButton(
+            //   padding: EdgeInsets.all(0),
+            //   onPressed: () {},
+            //   iconSize: 21,
+            //   // icon: Icon(Fryo.magnifier),
+            //   icon: Icon(
+            //     Icons.search,
+            //     color: fontColor,
+            //   ),
+            // ),
+            // IconButton(
+            //   padding: EdgeInsets.all(0),
+            //   onPressed: () {
+            //     Navigator.of(context).push(
+            //         MaterialPageRoute(builder: (context) => FilterPage()));
+            //   },
+            //   iconSize: 21,
+            //   // icon: Icon(Fryo.alarm),
+            //   icon: Icon(
+            //     // Icons.notification_important_outlined,
+            //     Icons.sort,
+            //     color: fontColor,
+            //   ),
+            // )
           ],
         ),
         body: Container(
@@ -280,6 +280,51 @@ Widget storeTab(BuildContext context) {
   ];
 
   return ListView(children: <Widget>[
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        SizedBox(
+          width: 300,
+          child: Container(
+            margin: EdgeInsets.only(left: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(32)),
+              child: ListTile(
+                title: Text('Search'),
+                leading: Icon(
+                  Icons.search,
+                  color: fontColor,
+                ),
+                // trailing: IconButton(
+                //     onPressed: () {
+                //       Navigator.of(context).push(
+                //           MaterialPageRoute(builder: (context) => FilterPage()));
+                //     },
+                //     icon: Icon(
+                //       Icons.sort,
+                //       color: fontColor,
+                //     ),
+                //     ),
+              ),
+            ),
+          ),
+        ),
+        CircleAvatar(
+          backgroundColor: primaryColor,
+          child: IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => FilterPage()));
+              },
+              icon: Icon(
+                Icons.sort,
+                color: whiteColor,
+              )),
+        )
+      ],
+    ),
     headerTopCategories(),
     deals('Hot Deals', onViewMore: () {}, items: <Widget>[
       foodItem(shoping[0], onTapped: () {
@@ -451,9 +496,9 @@ Widget headerCategoryItem(String name, IconData icon, {onPressed}) {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(25.0))),
               onPressed: onPressed,
-              backgroundColor: white,
+              backgroundColor: whiteColor,
               //Colors.black87
-              child: Icon(icon, size: 22, color: darkblueColor),
+              child: Icon(icon, size: 22, color: primaryColor),
             )),
         Text(name + ' ›', style: categoryText)
       ],
@@ -470,7 +515,7 @@ Widget deals(String dealTitle, {onViewMore, List<Widget> items}) {
       children: <Widget>[
         sectionHeader(dealTitle, onViewMore: onViewMore),
         SizedBox(
-          height: 250,
+          height: 290,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: (items != null)
