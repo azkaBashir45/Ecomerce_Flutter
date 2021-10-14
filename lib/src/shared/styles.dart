@@ -27,13 +27,18 @@ const h3 = TextStyle(
     fontFamily: 'Poppins');
 
 const h4 = TextStyle(
-    color: Colors.black,
+    color: darkgreyColor,
     fontSize: 18,
     fontWeight: FontWeight.w700,
     fontFamily: 'Poppins');
 
 const h5 = TextStyle(
     color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Poppins');
+const titleHome = TextStyle(
+    color: darkgreyColor,
     fontSize: 20,
     fontWeight: FontWeight.bold,
     fontFamily: 'Poppins');

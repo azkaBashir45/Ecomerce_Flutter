@@ -383,12 +383,11 @@ class _ProductPageState extends State<ProductPage> {
                         child: Text(
                           'Add To Cart',
                           style: TextStyle(
-                              color: darkblueColor,
-                              fontWeight: FontWeight.bold),
+                              color: whiteColor, fontWeight: FontWeight.bold),
                         ),
                         style: ElevatedButton.styleFrom(
                             fixedSize: Size(120, 20),
-                            primary: Color(0xffE8E8E8),
+                            primary: primaryColor,
                             shape: StadiumBorder()),
                       ),
 

@@ -14,3 +14,4 @@ const Color whiteColor = Color(0xffFFFFFF);
 const Color darkblueColor = Color(0xff2A52BE);
 const Color grey = Color(0xffB0B0B0);
 const Color underlineColor = Color(0xffD8BFD8);
+const Color darkgreyColor = Color(0xff696969);

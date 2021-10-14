@@ -60,7 +60,7 @@ Widget foodItem(Product food,
                             food.name,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
-                            style: h5,
+                            style: titleHome,
                           ),
                         ),
                       ),
@@ -175,4 +175,120 @@ Widget foodItem(Product food,
       // ),
     ),
   );
+}
+
+class MyCartCard extends StatelessWidget {
+  const MyCartCard({
+    @required this.productData,
+  });
+
+  final List<Product> productData;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: productData.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 10.0),
+            child: Container(
+              height: 90,
+              child: Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 1,
+                  color: whiteColor,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 5),
+                    child: ListTile(
+                      onTap: () {},
+                      title: Text(
+                        productData[index].name,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                            color: Colors.black),
+                      ),
+                      subtitle: Container(
+                        margin: EdgeInsets.only(top: 14),
+                        child: Row(
+                          children: [
+                            Text(
+                              productData[index].price,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: primaryColor),
+                            ),
+                            SizedBox(
+                              width: 22,
+                            ),
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: grey,
+                                  radius: 5,
+                                ),
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Text(
+                                  'Grey',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: primaryColor),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      leading: Image.asset(
+                        productData[index].image,
+                      ),
+                      trailing: Container(
+                        margin: EdgeInsets.only(top: 24),
+                        padding: EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: primaryColor)),
+                        child: Wrap(
+                          spacing: 7,
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.remove,
+                                size: 14,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 2,
+                            ),
+                            Text('1'),
+                            SizedBox(
+                              height: 2,
+                            ),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.black,
+                                size: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )),
+            ),
+          );
+        });
+  }
 }

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:fryo/src/shared/Product.dart';
 import 'package:fryo/src/shared/colors.dart';
 import 'package:fryo/src/shared/styles.dart';
+import 'package:fryo/src/shared/partials.dart';
 
 class MyCart extends StatefulWidget {
   // const MyCart({ Key? key }) : super(key: key);
@@ -70,80 +71,7 @@ class _MyCartState extends State<MyCart> {
             height: 400,
             margin: EdgeInsets.only(top: 20, bottom: 150),
             padding: EdgeInsets.all(10),
-            child: ListView.builder(
-                itemCount: productData.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    semanticContainer: true,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(22.0),
-                    ),
-                    elevation: 1,
-                    color: whiteColor,
-                    child: ListTile(
-                      onTap: () {},
-                      title: Text(
-                        productData[index].name,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            color: Colors.black),
-                      ),
-                      subtitle: Text(
-                        productData[index].price,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            color: primaryColor),
-                      ),
-                      leading: Image.asset(
-                        productData[index].image,
-                      ),
-                      trailing: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: primaryColor,
-                            ),
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Icon(
-                                Icons.remove,
-                                size: 14,
-                                color: whiteColor,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 2,
-                          ),
-                          Text('1'),
-                          SizedBox(
-                            height: 2,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: primaryColor,
-                            ),
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Icon(
-                                Icons.add,
-                                color: whiteColor,
-                                size: 14,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                }),
+            child: MyCartCard(productData: productData),
           ),
         ),
         //subtotal price
