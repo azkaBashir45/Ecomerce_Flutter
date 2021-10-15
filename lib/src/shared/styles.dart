@@ -75,6 +75,9 @@ const inputFieldTextStyle =
 const inputFieldHintTextStyle =
     TextStyle(fontFamily: 'Poppins', color: Color(0xff444444));
 
+const inputFieldHintsTextStyle =
+    TextStyle(fontFamily: 'Poppins', color: Color(0xffA9A9A9));
+
 const inputFieldPasswordTextStyle = TextStyle(
     fontFamily: 'Poppins', fontWeight: FontWeight.w500, letterSpacing: 3);
 

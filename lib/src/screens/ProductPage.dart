@@ -115,7 +115,7 @@ class _ProductPageState extends State<ProductPage> {
                           children: <Widget>[
                             Text(
                               widget.productData.name,
-                              style: h5,
+                              style: titleHome,
                             ),
                             SizedBox(
                               width: 102,
@@ -372,7 +372,7 @@ class _ProductPageState extends State<ProductPage> {
                     children: <Widget>[
                       Text(
                         widget.productData.price,
-                        style: h5,
+                        style: titleHome,
                       ),
                       SizedBox(
                         width: 130,
