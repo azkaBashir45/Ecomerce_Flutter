@@ -9,11 +9,12 @@ import '../shared/partials.dart';
 import 'MyCart.dart';
 import 'Favourite.dart';
 import 'Profile.dart';
+import 'package:fryo/src/Model/Category.dart';
 
 class Dashboard extends StatefulWidget {
   final String pageTitle;
-
-  Dashboard({Key key, this.pageTitle}) : super(key: key);
+  final Category category;
+  Dashboard({Key key, this.pageTitle, this.category}) : super(key: key);
 
   @override
   _DashboardState createState() => _DashboardState();
@@ -451,6 +452,13 @@ Widget sectionHeader(String headerTitle, {onViewMore}) {
 }
 
 // wrap the horizontal listview inside a sizedBox..
+
+List<Category> data = [
+  Category(
+      name: 'Bag',
+      icon: Icon(Icons.shopping_bag, size: 22, color: primaryColor)),
+  Category(name: 'Jewlery', icon: Icon(Icons.history_edu)),
+];
 Widget headerTopCategories() {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -462,24 +470,29 @@ Widget headerTopCategories() {
       sectionHeader('All Categories', onViewMore: () {}),
       SizedBox(
         height: 130,
-        child: ListView(
+        child: ListView.builder(
+          itemCount: data.length,
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
-          children: <Widget>[
-            headerCategoryItem('Bag', Icons.shopping_bag, onPressed: () {}),
-            headerCategoryItem('Clothes', Icons.collections_sharp,
-                onPressed: () {}),
-            headerCategoryItem('Jewlery', Icons.history_edu, onPressed: () {}),
-            headerCategoryItem('Sport', Icons.rowing, onPressed: () {}),
-            headerCategoryItem('Shoe', Icons.shop_2_sharp, onPressed: () {}),
-          ],
+          itemBuilder: (context, index) {
+            return headerCategoryItem(data[index]);
+            // children: <Widget>[
+            //   headerCategoryItem('Bag', Icons.shopping_bag, onPressed: () {}),
+            //   // headerCategoryItem('Clothes', Icons.collections_sharp,
+            //   //     onPressed: () {}),
+            //   headerCategoryItem('Jewlery', Icons.history_edu, onPressed: () {}),
+            //   // headerCategoryItem('Sport', Icons.rowing, onPressed: () {}),
+            //   // headerCategoryItem('Shoe', Icons.shop_2_sharp, onPressed: () {}),
+
+            // ],
+          },
         ),
       )
     ],
   );
 }
 
-Widget headerCategoryItem(String name, IconData icon, {onPressed}) {
+Widget headerCategoryItem(Category category, {onPressed}) {
   return Container(
     margin: EdgeInsets.only(left: 15),
     child: Column(
@@ -492,15 +505,16 @@ Widget headerCategoryItem(String name, IconData icon, {onPressed}) {
             height: 58,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
             child: FloatingActionButton(
-              heroTag: name,
+              heroTag: category.name,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(25.0))),
               onPressed: onPressed,
               backgroundColor: whiteColor,
               //Colors.black87
-              child: Icon(icon, size: 22, color: primaryColor),
+              child: category.icon,
+              // Icon(category.icon, size: 22, color: primaryColor),
             )),
-        Text(name + ' ›', style: categoryText)
+        Text(category.name + ' ›', style: categoryText)
       ],
     ),
   );

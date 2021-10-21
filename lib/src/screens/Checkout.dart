@@ -151,19 +151,19 @@ class _CheckOutState extends State<CheckOut> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 2.0),
+                padding: const EdgeInsets.only(top: 2.0, right: 10, left: 10),
                 child: fryCheckoutInput('Card Holder Name', icon: Icons.person),
               ),
               Padding(
-                  padding: const EdgeInsets.only(top: 2.0),
+                  padding: const EdgeInsets.only(top: 2.0, right: 10, left: 10),
                   child: fryCheckoutInput('Card Number',
                       icon: Icons.format_list_numbered)),
               Padding(
-                padding: const EdgeInsets.only(top: 2.0),
+                padding: const EdgeInsets.only(top: 2.0, right: 10, left: 10),
                 child: fryCheckoutInput("Expire Date", icon: Icons.ac_unit),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 2.0),
+                padding: const EdgeInsets.only(top: 2.0, right: 10, left: 10),
                 child: fryCheckoutInput("CVV", icon: Icons.card_giftcard),
               ),
               SizedBox(
